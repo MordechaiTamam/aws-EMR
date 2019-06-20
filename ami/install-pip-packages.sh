@@ -1,4 +1,6 @@
 #!/usr/bin/env bash
+start=`date +%s`
+
 set -e
 WORK_DIR=/tmp/$(date +%Y%m%d_%H%M%S)
 mkdir ${WORK_DIR}
@@ -15,3 +17,6 @@ sudo rm -f /usr/local/lib64/python2.7/site-packages/gtsam/libstdc++.so.6
 sudo sed -i '/^backend /s/:.*$/: agg/' /usr/local/lib64/python2.7/site-packages/matplotlib/mpl-data/matplotlibrc
 sudo pip install requests==2.22.0
 sudo pip install numba==0.43.0
+
+runtime=$((end-start))
+echo $runtime > /mnt/var/log/install-py-packages.log
