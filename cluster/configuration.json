@@ -1,5 +1,12 @@
 [
   {
+    "Classification": "jupyter-s3-conf",
+    "Properties": {
+        "s3.persistence.enabled": "true",
+        "s3.persistence.bucket": "rem-spark-staging"
+    }
+  },
+  {
    "Classification": "yarn-env",
    "Properties": {},
    "Configurations": [
@@ -8,26 +15,31 @@
          "Properties": {
             "NEVO_API_URL=http":"http://nginx-nevo.service.consul/api",
             "SPARK_ENV":"CLOUD",
-            "OVERPASS_URL":"http://10.0.8.169:8080/api/interpreter",
-            "OVERPASS_ZGM_URL":"http://10.0.7.243:80/api/interpreter"
+            "OVERPASS_URL":"http://overpass.service.consul/api/interpreter"
          }
        }
      ]
    },
   {
-    "classification":"spark",
-    "properties":
+    "Classification":"spark",
+    "Properties":
       {
         "maximizeResourceAllocation":"true"
       }
   },
   {
-    "classification":"yarn-site",
-    "properties":
+    "Classification":"yarn-site",
+    "Properties":
       {
         "yarn.nodemanager.vmem-pmem-ratio":"4",
         "yarn.nodemanager.pmem-check-enabled":"false",
         "yarn.nodemanager.vmem-check-enabled":"false"
       }
+  },
+  {
+    "Classification": "emrfs-site",
+    "Properties": {
+      "fs.s3.maxConnections": "10000"
+    }
   }
 ]
