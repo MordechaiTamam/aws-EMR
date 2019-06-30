@@ -13,6 +13,7 @@ sudo mv consul /usr/local/bin/
 sudo rm -rf /var/consul/
 consul_conf=$(jq -n --arg b "$bar" '{
    "server": false,
+   "bind_addr":"{{ GetInterfaceIP \"eth0\" }}",
    "datacenter": "prems",
    "data_dir": "/var/consul",
    "encrypt": "DIzQ1W9pYsOdt9oyjZU6Fw==",

@@ -7,10 +7,10 @@ service_access_sg="sg-023edac99a59a4235"
 additional_sg="sg-00e71ca66b2415df7"
 subnet_id="subnet-0aa439b2753e0b62d"
 cluster_name="REM "$(date +"%D %T")
-core_instance_count=2
+core_instance_count=1
 master_instance_count=1
-CORE_INSTANCE_TYPE="m4.large"
-MASTER_INSTANCE_TYPE="m4.large"
+CORE_INSTANCE_TYPE="r4.16xlarge"
+MASTER_INSTANCE_TYPE="r4.16xlarge"
 create_cluster_response=$(aws emr create-cluster \
     --auto-scaling-role EMR_AutoScaling_DefaultRole \
     --applications Name=Hadoop Name=Spark Name=Livy Name=Ganglia Name=Hue Name=JupyterHub Name=Zeppelin \
