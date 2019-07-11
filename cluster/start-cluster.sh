@@ -23,7 +23,7 @@ create_cluster_response=$(aws emr create-cluster \
     --name "$cluster_name" \
     --custom-ami-id "$ami_installed_without_consul" \
     --instance-groups '[{"InstanceCount":'${master_instance_count}',"BidPrice":"OnDemandPrice","InstanceGroupType":"MASTER","InstanceType":"'${MASTER_INSTANCE_TYPE}'","Name":"Master - 1"},{"InstanceCount":'${core_instance_count}',"BidPrice":"OnDemandPrice","InstanceGroupType":"CORE","InstanceType":"'${CORE_INSTANCE_TYPE}'","Name":"Core - 2"}]' \
-    --bootstrap-actions '[{"Path":"s3://rem-spark-staging/users/modit/emr-setup/bootstrap/mount-efs.sh","Name":"mount EFS"}]' \
+    --bootstrap-actions '[{"Path":"s3://rem-spark-staging/rem/users/modit/play-ground/install.sh"},{"Path":"s3://rem-spark-staging/users/modit/emr-setup/bootstrap/mount-efs.sh","Name":"mount EFS"},{"Path":"s3://rem-spark-staging/rem/users/modit/play-ground/general-purpose.sh","Name":"general-purpose"}]' \
     --configuration file:///localhomes/modit/dev/dev/aws-EMR/cluster/configuration.json \
     --region us-east-1)
 

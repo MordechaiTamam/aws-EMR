@@ -6,23 +6,22 @@
         "s3.persistence.bucket": "rem-spark-staging"
     }
   },
-  {
-    "Classification": "spark-env",
-    "Configurations": [
-        {
-            "Classification": "export",
-            "Configurations": [],
-            "Properties": {
-                "NEVO_API_URL=http":"http://nginx-nevo.service.consul/api",
-                "SPARK_ENV":"CLOUD",
-                "OVERPASS_URL":"http://overpass.service.consul/api/interpreter",
-                "RDS_HOST":"rem-dev2.cpxehj22mtjf.us-east-1.rds.amazonaws.com",
-                "RDS_PORT":"5432"
-            }
-        }
-    ],
-    "Properties": {}
-    },
+ {
+ "Classification": "yarn-env",
+ "Properties": {},
+ "Configurations":[
+     {
+       "Classification": "export",
+       "Properties": {
+         "NEVO_API_URL": "http://nginx-nevo.service.consul/api",
+         "SPARK_ENV": "EMR",
+         "OVERPASS_URL": "http://overpass.service.consul/api/interpreter",
+         "RDS_HOST": "rem-dev2.cpxehj22mtjf.us-east-1.rds.amazonaws.com",
+         "RDS_PORT": "5432"
+       }
+     }
+   ]
+   },
   {
     "Classification":"spark",
     "Properties":
