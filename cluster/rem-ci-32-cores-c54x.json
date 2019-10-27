@@ -1,0 +1,19 @@
+{"cluster_name": "rem-ci c5.4xlarge 32 cores",
+  "salve_sg":"sg-0428191fd3d6b93d0",
+"master_sg":"sg-08d6cc9191269f4f4",
+"service_access_sg":"sg-01a40a55f5bf886ce",
+"additional_sg":"sg-00291731d745ccce9",
+"subnet_id":"subnet-00af0a85ae694f5d9",
+"efs_id": "fs-d4e50136",
+"instance": {
+ "core": {
+   "type": "c5.4xlarge",
+   "count": 2,
+   "executor_cores": 15
+  },
+ "master": {
+   "type": "m4.2xlarge",
+   "count": 1
+   }
+  }
+}

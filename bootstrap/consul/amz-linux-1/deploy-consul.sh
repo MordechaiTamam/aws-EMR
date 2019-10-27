@@ -30,6 +30,7 @@ sudo mv config.json /etc/consul.d/client/
 sudo /usr/local/bin/consul validate /etc/consul.d/client/config.json
 sudo rm -rf /etc/init.d/consul
 sudo aws s3 cp s3://rem-spark-staging/users/modit/emr-setup/consul/amz-linux-1/consul /etc/init.d/
+
 sudo chmod +x /etc/init.d/consul
 sudo service consul start
 # ---------------- End Consul deployment --------------------------------------

@@ -4,7 +4,7 @@ start=`date +%s`
 set -e
 
 mkdir /mnt/efs -p
-sudo mount -t efs fs-9c078c7c: /mnt/efs
+sudo mount -t efs $1: /mnt/efs
 sudo chmod 777 /mnt/efs
 end=`date +%s`
 

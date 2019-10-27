@@ -1,5 +1,4 @@
 #!/usr/bin/env bash
-start=`date +%s`
 sudo yum update -y
 sudo yum-config-manager --enable epel
 sudo yum groupinstall -y 'Development Tools'
@@ -21,3 +20,4 @@ sudo yum -y install amazon-efs-utils
 
 runtime=$((end-start))
 echo $runtime > /mnt/var/log/install-machine.log
+start=`date +%s`

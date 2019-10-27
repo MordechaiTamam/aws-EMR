@@ -1,0 +1,18 @@
+{"salve_sg":"sg-0e92f073cc22d067e",
+"master_sg":"sg-0307cd719f2cf634d",
+"service_access_sg":"sg-023edac99a59a4235",
+"additional_sg":"sg-0e0e3051b6cce73cf",
+"subnet_id":"subnet-032279796692f8caa",
+"efs_id": "fs-61fb22e0",
+"instance": {
+ "core": {
+   "type": "r5.2xlarge",
+   "count": 1,
+   "executor_cores": 8
+  },
+ "master": {
+   "type": "m4.2xlarge",
+   "count": 1
+   }
+  }
+}
